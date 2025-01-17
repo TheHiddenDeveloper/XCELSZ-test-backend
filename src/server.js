@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const app = express();
 const bookingRoutes = require('./routes/bookingRoutes');
+const quoteRoutes = require('./routes/quoteRoutes');
 
 // Create uploads directory if it doesn't exist
 const fs = require('fs');
@@ -20,6 +21,7 @@ app.use('/uploads', express.static('uploads'));
 
 // Routes
 app.use('/api', bookingRoutes);
+app.use('/api', quoteRoutes);
 
 const PORT = process.env.PORT || 3000;
 
